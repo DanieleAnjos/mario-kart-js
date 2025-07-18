@@ -1,4 +1,8 @@
-<h1>Desafio de projeto do Felipão: Mario Kart.JS</h1>
+# 🏁 Mario Kart.JS – Desafio de Projeto do Felipão
+
+Este projeto simula uma corrida entre personagens inspirada no universo do Mario Kart, utilizando JavaScript puro no terminal. Desenvolvido como desafio proposto por Felipão, o objetivo é aplicar conceitos como objetos, estruturas condicionais, aleatoriedade e manipulação de dados de forma lúdica.
+
+---
 
   <table>
         <tr>
@@ -76,28 +80,86 @@
 
 <p></p>
 
-<h3>🕹️ Regras & mecânicas:</h3>
 
-<b>Jogadores:</b>
+## 🎮 Regras & Mecânicas
 
-<input type="checkbox" id="jogadores-item" />
-<label for="jogadores-item">O Computador deve receber dois personagens para disputar a corrida em um objeto cada</label>
+- Dois personagens são escolhidos para competir, cada um com os atributos:
+  - **Velocidade**
+  - **Manobrabilidade**
+  - **Poder**
+  - **Pontos** (inicia com 0)
 
-<b>Pistas:</b>
+- A corrida é composta por **5 rodadas**, e a cada rodada um **bloco da pista** é sorteado:
+  - **Reta**: soma-se o valor do dado + Velocidade
+  - **Curva**: soma-se o valor do dado + Manobrabilidade
+  - **Confronto**: soma-se o valor do dado + Poder (quem perde, perde 1 ponto, sem valor negativo)
 
-<ul>
-  <li><input type="checkbox" id="pistas-1-item" /> <label for="pistas-1-item">Os personagens irão correr em uma pista aleatória de 5 rodadas</label></li>
-  <li><input type="checkbox" id="pistas-2-item" /> <label for="pistas-2-item">A cada rodada, será sorteado um bloco da pista que pode ser uma reta, curva ou confronto</label>
-    <ul>
-      <li><input type="checkbox" id="pistas-2-1-item" /> <label for="pistas-2-1-item">Caso o bloco da pista seja uma RETA, o jogador deve jogar um dado de 6 lados e somar o atributo VELOCIDADE, quem vencer ganha um ponto</label></li>
-      <li><input type="checkbox" id="pistas-2-2-item" /> <label for="pistas-2-2-item">Caso o bloco da pista seja uma CURVA, o jogador deve jogar um dado de 6 lados e somar o atributo MANOBRABILIDADE, quem vencer ganha um ponto</label></li>
-      <li><input type="checkbox" id="pistas-2-3-item" /> <label for="pistas-2-3-item">Caso o bloco da pista seja um CONFRONTO, o jogador deve jogar um dado de 6 lados e somar o atributo PODER, quem perder, perde um ponto</label></li>
-      <li><input type="checkbox" id="pistas-2-3-item" /> <label for="pistas-2-3-item">Nenhum jogador pode ter pontuação negativa (valores abaixo de 0)</label></li>
-    </ul>
-  </li>
-</ul>
+- Quem tiver **mais pontos ao final das 5 rodadas**, vence a corrida.
 
-<b>Condição de vitória:</b>
+---
 
-<input type="checkbox" id="vitoria-item" />
-<label for="vitoria-item">Ao final, vence quem acumulou mais pontos</label>
+## 🚀 Como Executar
+
+1. **Clone o projeto:**
+
+   ```bash
+   git clone https://github.com/DanieleAnjos/mario-kart-js.git
+   cd mario-kart-js
+   ```
+
+2. **Execute o jogo:**
+
+   ```bash
+   node src/index.js
+   ```
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- JavaScript (ES6)
+- readline (para entrada no terminal)
+
+---
+
+
+## 📋 Passo a Passo da Execução
+
+1. Criei um objeto com os personagens, incluindo seus atributos.
+2. Solicitei que o usuário escolhesse dois personagens via terminal.
+3. Programei o sorteio de 5 blocos aleatórios da pista.
+4. Para cada rodada:
+   - Sorteio do tipo de bloco (reta, curva ou confronto)
+   - Geração aleatória de dados (1 a 6) para cada jogador
+   - Soma dos atributos com o dado
+   - Cálculo de pontos
+   - Prevenção de pontuação negativa
+5. Exibi o vencedor com base nos pontos totais.
+6. Refatorei o código para torná-lo mais modular e legível.
+
+---
+
+## 🏆 Exemplo de Saída no Terminal
+
+```
+============ MARIO KART ==============
+
+Escolha o personagem:
+Player1 (ex: mario): mario
+Player2 (ex: peach): yoshi
+
+Rodada 1: CURVA
+Mario tirou 3 + Manobrabilidade(3) = 6
+Yoshi tirou 4 + Manobrabilidade(4) = 8
+-> Yoshi venceu esta rodada!
+
+...
+
+🏁 Vencedor: Yoshi com 4 pontos!
+```
+
+---
+
+## 👨‍💻 Autor
+
+Projeto desenvolvido por felipeAguiarCode e aprimorado por DanieleAnjos.
